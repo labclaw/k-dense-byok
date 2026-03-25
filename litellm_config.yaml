@@ -14,6 +14,7 @@
     X-Title: "Kady-Expert"
 
 model_list:
+  # ── Gemini models ──
   - model_name: gemini-3.1-pro-preview
     litellm_params:
       <<: *openrouter_shared
