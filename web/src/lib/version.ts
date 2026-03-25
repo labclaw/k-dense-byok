@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export const APP_VERSION = "0.2.4";
+export const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? "0.0.0";
 
 const GITHUB_REPO = "K-Dense-AI/k-dense-byok";
 const CACHE_KEY = "kdense-update-check";
@@ -15,6 +15,7 @@ interface UpdateCheckResult {
 
 interface CachedCheck extends UpdateCheckResult {
   ts: number;
+  forVersion: string;
 }
 
 function compareSemver(current: string, latest: string): boolean {
@@ -37,7 +38,7 @@ export function useUpdateCheck(): UpdateCheckResult {
       const raw = localStorage.getItem(CACHE_KEY);
       if (raw) {
         const cached: CachedCheck = JSON.parse(raw);
-        if (Date.now() - cached.ts < CACHE_TTL_MS) {
+        if (cached.forVersion === APP_VERSION && Date.now() - cached.ts < CACHE_TTL_MS) {
           setResult({ updateAvailable: cached.updateAvailable, latestVersion: cached.latestVersion });
           return;
         }
@@ -56,7 +57,7 @@ export function useUpdateCheck(): UpdateCheckResult {
         const latestVersion = tag.replace(/^v/, "");
         const updateAvailable =
           latestVersion.length > 0 && compareSemver(APP_VERSION, latestVersion);
-        const value: CachedCheck = { updateAvailable, latestVersion, ts: Date.now() };
+        const value: CachedCheck = { updateAvailable, latestVersion, ts: Date.now(), forVersion: APP_VERSION };
         localStorage.setItem(CACHE_KEY, JSON.stringify(value));
         setResult({ updateAvailable, latestVersion });
       })
