@@ -469,6 +469,32 @@
     "description": "LFM2.5-1.2B-Instruct is a compact, high-performance instruction-tuned model built for fast on-device AI. It delivers strong chat quality in a 1.2B parameter footprint, with efficient edge inference and broad runtime support."
   },
   {
+    "id": "openrouter/nvidia/nemotron-3-super-120b-a12b:free",
+    "label": "NVIDIA: Nemotron 3 Super (free)",
+    "provider": "NVIDIA",
+    "tier": "budget",
+    "context_length": 262144,
+    "pricing": {
+      "prompt": 0.0,
+      "completion": 0.0
+    },
+    "modality": "text->text",
+    "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer Mixture-of-Experts architecture with multi-token prediction (MTP), it delivers over 50% higher token generation compared to leading open models.\n \nThe model features a 1M token context window for long-term agent coherence, cross-document reasoning, and multi-step task planning. Latent MoE enables calling 4 experts for the inference cost of only one, improving intelligence and generalization. Multi-environment RL training across 10+ environments delivers leading accuracy on benchmarks including AIME 2025, TerminalBench, and SWE-Bench Verified.\n \nFully open with weights, datasets, and recipes under the NVIDIA Open License, Nemotron 3 Super allows easy customization and secure deployment anywhere — from workstation to cloud."
+  },
+  {
+    "id": "openrouter/nvidia/nemotron-3-super-120b-a12b",
+    "label": "NVIDIA: Nemotron 3 Super",
+    "provider": "NVIDIA",
+    "tier": "budget",
+    "context_length": 262144,
+    "pricing": {
+      "prompt": 0.1,
+      "completion": 0.5
+    },
+    "modality": "text->text",
+    "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer Mixture-of-Experts architecture with multi-token prediction (MTP), it delivers over 50% higher token generation compared to leading open models.\n \nThe model features a 1M token context window for long-term agent coherence, cross-document reasoning, and multi-step task planning. Latent MoE enables calling 4 experts for the inference cost of only one, improving intelligence and generalization. Multi-environment RL training across 10+ environments delivers leading accuracy on benchmarks including AIME 2025, TerminalBench, and SWE-Bench Verified.\n \nFully open with weights, datasets, and recipes under the NVIDIA Open License, Nemotron 3 Super allows easy customization and secure deployment anywhere — from workstation to cloud."
+  },
+  {
     "id": "openrouter/liquid/lfm-2.5-1.2b-thinking:free",
     "label": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
     "provider": "Liquid",
